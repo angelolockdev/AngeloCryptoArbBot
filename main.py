@@ -212,20 +212,21 @@ async def history_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """
-    /help : Affiche la liste complète des commandes avec leurs descriptions.
+    /help : Affiche la liste complète des commandes avec leurs descriptions en format HTML.
     """
     help_message = (
-        "📖 **Liste des Commandes Disponibles :**\n\n"
-        "• **/start** - Démarre le bot et affiche le message de bienvenue.\n"
-        "• **/status** - Affiche les prix détaillés sur OKC et Kraken, avec calcul des spreads.\n"
-        "• **/arbitrage** - Analyse les opportunités d'arbitrage et simule des transactions.\n"
-        "• **/account_status** - Affiche le capital et la variation (gains/pertes) de chaque compte.\n"
-        "• **/history** - Affiche l'historique des transactions simulées récentes.\n"
-        "• **/start_loop** - Lance une boucle d'arbitrage en continu toutes les 5 secondes.\n"
-        "• **/stop_loop** - Arrête la boucle d'arbitrage en continu.\n"
-        "• **/help** - Affiche ce message d'aide."
+        "📖 <b>Liste des Commandes Disponibles :</b>\n\n"
+        "• <b>/start</b> - Démarre le bot et affiche le message de bienvenue.\n"
+        "• <b>/status</b> - Affiche les prix détaillés sur OKC et Kraken, avec calcul des spreads.\n"
+        "• <b>/arbitrage</b> - Analyse les opportunités d'arbitrage et simule des transactions.\n"
+        "• <b>/account_status</b> - Affiche le capital et la variation (gains/pertes) de chaque compte.\n"
+        "• <b>/history</b> - Affiche l'historique des transactions simulées récentes.\n"
+        "• <b>/start_loop</b> - Lance une boucle d'arbitrage en continu toutes les 5 secondes.\n"
+        "• <b>/stop_loop</b> - Arrête la boucle d'arbitrage en continu.\n"
+        "• <b>/help</b> - Affiche ce message d'aide."
     )
-    await update.effective_message.reply_text(help_message, parse_mode="Markdown")
+    await update.effective_message.reply_text(help_message, parse_mode="HTML")
+
 
 # ----------------------------------------------------------------------
 # Boucle d'arbitrage continu (asynchrone)
